@@ -18,7 +18,7 @@ class TodoList extends Component {
     }
     // React 事件绑定 onChange 
     render() {
-        console.log(" render")
+       
         // react 要求返回单个标签，若有多个，最外层必须有一个标签包裹，若不想使用且不想添加到页面上，则引入Fragment
         return (
             <Fragment>
@@ -32,7 +32,6 @@ class TodoList extends Component {
                         className="input"
                         value={this.state.inputValue}
                         onChange={this.handleInputChange}
-                        ref = {(input)=>{this.input = input}}
                     />
                     <button onClick={this.handleBtnClick}>提交</button></div>
                 <ul>
@@ -45,7 +44,7 @@ class TodoList extends Component {
         )
     }
     handleInputChange(e) {
-        const value = this.input.value
+        const value = e.target.value
         this.setState(() => ({
             inputValue: value
         })) //返回函数对象，this.setState()异步设置数据，需要对value进行保存

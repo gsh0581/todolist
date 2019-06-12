@@ -83,3 +83,4 @@ class继承Component
 Test.js
 
 虚拟DOM
+ref 获取和操作DOM
